@@ -1,0 +1,185 @@
+body {
+  background-color: #607274;
+}
+
+.popup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#popup {
+  display: none;
+  width: 500px;
+  background-color: grey;
+  color: white;
+  border: 2px solid white;
+  text-align: center;
+  align-items: center;
+  z-index: 4;
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+.about {
+  font-family: "Verdana", sans-serif;
+  color: #fff;
+}
+
+#congrats {
+  font-family: "Verdana", sans-serif;
+}
+
+#sorry {
+  font-family: "Verdana", sans-serif;
+}
+
+button {
+  margin: 20px auto;
+  width: 100px;
+  height: 100px;
+  background-color: #af2655;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: large;
+  font-weight: 900;
+  border-radius: 50px;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 9px #999;
+}
+
+button:hover {
+  background-color: #860a35;
+}
+
+button:active {
+  background-color: #860a35;
+  box-shadow: 0 5px #444;
+  transform: translateY(4px);
+}
+
+#cups {
+  display: flex;
+  flex-direction: row;
+}
+
+.the_ball {
+  /*it seems that css-flex things must be applied to the container that the item falls under*/
+  display: flex;
+  justify-content: center;
+}
+
+#ball {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: orange;
+  position: absolute;
+  background: radial-gradient(ball at 100px 100px, yellow, orange);
+  top: 428px; /*ensures that ball is behind cups all the time*/
+  z-index: 1;
+}
+
+.cup {
+  position: relative;
+  height: 300px;
+  width: 250px;
+  margin: auto;
+  padding-top: 100px;
+  background: linear-gradient(right, #ddd 0, white 100%);
+  background-color: red;
+  border-top-left-radius: 125px 50px;
+  border-top-right-radius: 125px 50px;
+  border-bottom-left-radius: 125px 50px;
+  border-bottom-right-radius: 125px 50px;
+  box-shadow: 0 15px 0 white;
+  transition: top ease 1.5s;
+  z-index: 2;
+}
+
+.see:hover {
+  top: -100px;
+}
+
+.shuffleOne {
+  animation: cup1 1.5s 3 alternate;
+}
+
+.shuffleTwo {
+  animation: cup2 1.5s 3 alternate;
+}
+
+.shuffleThree {
+  animation: cup3 1.5s 3 alternate;
+}
+
+#retry {
+  display: none;
+}
+
+/* keyframes for moving cups */
+@keyframes cup1 {
+  0% {
+    left: 0px;
+  }
+  50% {
+    left: 960px;
+  }
+  75% {
+    left: 480px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes cup2 {
+  0% {
+    left: 0px;
+  }
+  50% {
+    left: -480px;
+  }
+  75% {
+    left: 480px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes cup3 {
+  0% {
+    left: 0px;
+  }
+
+  50% {
+    left: -960px;
+  }
+  75% {
+    left: -480px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+footer {
+  margin-top: 40px;
+  font-family: "Verdana", sans-serif;
+  font-size: 15px;
+  color: white;
+}
